@@ -22,6 +22,7 @@ public class WiiMoteView extends JPanel {
 	Color greenColor = Color.GREEN;
 	Color yellowColor = Color.YELLOW;
 	Color cursorColor = Color.MAGENTA;
+	Color backColor = Color.BLACK;
 
 	public WiiMoteView() {
 		setPreferredSize(new Dimension(900, 900));
@@ -30,7 +31,7 @@ public class WiiMoteView extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
-		g2.setColor(Color.BLACK);
+		g2.setColor(backColor);
 		g2.fillRect(0, 0, 900, 900);
 		g2.setColor(redColor);
 		g2.fill(red);

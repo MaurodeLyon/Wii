@@ -55,6 +55,7 @@ public class WiiMoteModel implements ActionListener {
 		case 1:
 			steps.add((int) (Math.random() * 3));
 			input.clear();
+			flash(true);
 			state = 4;
 			System.out.println("Steps are" + steps);
 			break;
@@ -63,6 +64,7 @@ public class WiiMoteModel implements ActionListener {
 			steps.clear();
 			input.clear();
 			steps.add((int) (Math.random() * 3));
+			flash(false);
 			state = 4;
 			System.out.println("Steps are " + steps);
 			break;
@@ -72,6 +74,7 @@ public class WiiMoteModel implements ActionListener {
 		// show sequence
 		case 4:
 			if(!showing){
+				view.backColor = Color.BLACK;
 				showsequence();
 				showing = true;
 			}
@@ -92,6 +95,14 @@ public class WiiMoteModel implements ActionListener {
 			}
 		}
 		view.repaint();
+	}
+
+	private void flash(boolean b) {
+		if(b){
+			view.backColor = new Color(0,153,0);
+		}else{
+			view.backColor = new Color(153,0,0);
+		}
 	}
 
 	private void showsequence() {

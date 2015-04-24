@@ -1,0 +1,186 @@
+package simon;
+
+import java.awt.geom.Rectangle2D;
+
+import wiiusej.WiiUseApiManager;
+import wiiusej.Wiimote;
+import wiiusej.wiiusejevents.physicalevents.ExpansionEvent;
+import wiiusej.wiiusejevents.physicalevents.IREvent;
+import wiiusej.wiiusejevents.physicalevents.MotionSensingEvent;
+import wiiusej.wiiusejevents.physicalevents.WiimoteButtonsEvent;
+import wiiusej.wiiusejevents.utils.WiimoteListener;
+import wiiusej.wiiusejevents.wiiuseapievents.ClassicControllerInsertedEvent;
+import wiiusej.wiiusejevents.wiiuseapievents.ClassicControllerRemovedEvent;
+import wiiusej.wiiusejevents.wiiuseapievents.DisconnectionEvent;
+import wiiusej.wiiusejevents.wiiuseapievents.GuitarHeroInsertedEvent;
+import wiiusej.wiiusejevents.wiiuseapievents.GuitarHeroRemovedEvent;
+import wiiusej.wiiusejevents.wiiuseapievents.NunchukInsertedEvent;
+import wiiusej.wiiusejevents.wiiuseapievents.NunchukRemovedEvent;
+import wiiusej.wiiusejevents.wiiuseapievents.StatusEvent;
+
+public class WiiMoteController implements WiimoteListener {
+
+	private WiiMoteModel model;
+	private WiiMoteView view;
+
+	public WiiMoteController(WiiMoteView view, WiiMoteModel model) {
+		this.model = model;
+		this.view = view;
+		connectWiiMotes();
+	}
+
+	private void connectWiiMotes() {
+		Wiimote[] wiimotes = WiiUseApiManager.getWiimotes(4, true);
+		for (int id = 0; id < wiimotes.length; id++) {
+			Wiimote wiimote = wiimotes[id];
+			switch (id) {
+			case 0:
+				wiimote.setLeds(true, false, false, false);
+				break;
+			case 1:
+				wiimote.setLeds(false, true, false, false);
+				break;
+			case 2:
+				wiimote.setLeds(false, false, true, false);
+				break;
+			case 3:
+				wiimote.setLeds(false, false, false, true);
+				break;
+			}
+			wiimote.addWiiMoteEventListeners(this);
+		}
+	}
+
+	public void onButtonsEvent(WiimoteButtonsEvent e) {
+		if (e.isButtonUpJustPressed()) {
+			model.up = true;
+		}
+		if (e.isButtonUpHeld() && e.isButtonAPressed()) {
+			model.input.add(0);
+		}
+		if (e.isButtonUpJustReleased()) {
+			model.up = false;
+			view.cursor = new Rectangle2D.Double(0, 0, 0, 0);
+		}
+
+		if (e.isButtonDownJustPressed()) {
+			model.down = true;
+		}
+		if (e.isButtonDownHeld() && e.isButtonAPressed()) {
+			model.input.add(2);
+		}
+		if (e.isButtonDownJustReleased()) {
+			model.down = false;
+			view.cursor = new Rectangle2D.Double(0, 0, 0, 0);
+		}
+
+		if (e.isButtonLeftJustPressed()) {
+			model.left = true;
+		}
+		if (e.isButtonLeftHeld() && e.isButtonAPressed()) {
+			model.input.add(3);
+		}
+		if (e.isButtonLeftJustReleased()) {
+			model.left = false;
+			view.cursor = new Rectangle2D.Double(0, 0, 0, 0);
+		}
+
+		if (e.isButtonRightJustPressed()) {
+			model.right = true;
+		}
+		if (e.isButtonRightHeld() && e.isButtonAPressed()) {
+			model.input.add(1);
+		}
+		if (e.isButtonRightJustReleased()) {
+			model.right = false;
+			view.cursor = new Rectangle2D.Double(0, 0, 0, 0);
+		}
+
+		if (e.isButtonOneJustPressed()) {
+			if (model.state == 0) {
+				model.state = 2;
+			}
+		}
+		if (e.isButtonTwoJustPressed()) {
+			if (model.state == 0) {
+				model.state = 2;
+			}
+		}
+
+		if ((e.isButtonAHeld() && e.isButtonBJustPressed())
+				|| (e.isButtonAJustPressed() && e.isButtonBHeld())
+				|| (e.isButtonAJustPressed() && e.isButtonBJustPressed())) {
+			System.exit(0);
+		}
+		System.out.println(model.input);
+	}
+
+	@Override
+	public void onClassicControllerInsertedEvent(
+			ClassicControllerInsertedEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onClassicControllerRemovedEvent(
+			ClassicControllerRemovedEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onDisconnectionEvent(DisconnectionEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onExpansionEvent(ExpansionEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onGuitarHeroInsertedEvent(GuitarHeroInsertedEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onGuitarHeroRemovedEvent(GuitarHeroRemovedEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onIrEvent(IREvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onMotionSensingEvent(MotionSensingEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onNunchukInsertedEvent(NunchukInsertedEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onNunchukRemovedEvent(NunchukRemovedEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onStatusEvent(StatusEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
