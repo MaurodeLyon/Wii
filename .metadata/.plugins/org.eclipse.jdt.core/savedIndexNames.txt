@@ -1,4 +1,2 @@
 INDEX VERSION 1.127+C:\Users\Mauro\Documents\GitHub\Wii\.metadata\.plugins\org.eclipse.jdt.core
-1228758561.index
 4218619897.index
-2568836084.index

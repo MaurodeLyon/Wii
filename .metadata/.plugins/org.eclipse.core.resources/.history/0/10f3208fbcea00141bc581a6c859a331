@@ -70,11 +70,11 @@ public class WiiMoteModel implements ActionListener {
 			break;
 		// idle state
 		case 3:
-			view.backColor = Color.BLACK;
 			break;
 		// show sequence
 		case 4:
 			if(!showing){
+				view.backColor = Color.BLACK;
 				showsequence();
 				showing = true;
 			}
@@ -108,7 +108,7 @@ public class WiiMoteModel implements ActionListener {
 	private void showsequence() {
 		x = 0;
 		flip = false;
-		timer = new Timer(750, new ActionListener() {
+		timer = new Timer(500, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (x < steps.size()) {
 					switch (steps.get(x)) {
