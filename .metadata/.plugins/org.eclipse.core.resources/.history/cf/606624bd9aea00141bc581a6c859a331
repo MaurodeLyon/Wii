@@ -1,0 +1,10 @@
+package simon;
+
+import javax.swing.JPanel;
+
+public class WiiMoteView extends JPanel{
+
+	public WiiMoteView(){
+		
+	}
+}
