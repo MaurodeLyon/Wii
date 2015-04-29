@@ -2,14 +2,18 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.awt.geom.Rectangle2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Rectangle2D.Double"/>
-<fullyQualifiedTypeName name="wiiusej.Wiimote"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="javax.swing.Timer"/>
 <fullyQualifiedTypeName name="wiiusej.values.RawAcceleration"/>
-<fullyQualifiedTypeName name="java.awt.geom.Point2D"/>
-<fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
 <fullyQualifiedTypeName name="java.awt.Stroke"/>
 <fullyQualifiedTypeName name="java.awt.Shape"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
+<fullyQualifiedTypeName name="nunchuck.WiiMoteController"/>
+<fullyQualifiedTypeName name="wiiusej.WiiUseApiManager"/>
+<fullyQualifiedTypeName name="wiiusej.Wiimote"/>
+<fullyQualifiedTypeName name="wiiusej.wiiusejevents.utils.WiimoteListener"/>
+<fullyQualifiedTypeName name="wiiusej.wiiusejevents.physicalevents.NunchukButtonsEvent"/>
 </qualifiedTypeNameHistroy>
