@@ -17,14 +17,14 @@ public class WiiMoteModel implements ActionListener {
 
 	public WiiMoteModel(WiiMoteView view) {
 		this.view = view;
-		new Timer(5, this).start();
+		new Timer(10, this).start();
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		X = acceleration.getX();
 		Y = acceleration.getY();
 		Z = acceleration.getZ();
-		//System.out.println(X + "\t" + Y + "\t" + Z);
+		System.out.println(X + "\t" + Y + "\t" + Z);
 		if (positionX > view.getWidth()) {
 			positionX = 0;
 		} else {

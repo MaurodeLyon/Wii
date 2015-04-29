@@ -17,7 +17,7 @@ public class WiiMoteModel implements ActionListener {
 
 	public WiiMoteModel(WiiMoteView view) {
 		this.view = view;
-		new Timer(5, this).start();
+		new Timer(1, this).start();
 	}
 
 	public void actionPerformed(ActionEvent e) {

@@ -33,11 +33,14 @@ public class WiiMoteView extends JPanel {
 		Graphics2D g2 = (Graphics2D) g;
 
 		g2.setColor(Color.RED);
-		g2.drawLine((int) oldX.getX(), (int) oldX.getY(), (int) X.getX(), (int) X.getY());
+		g2.drawLine((int) oldX.getX(), (int) oldX.getY(), (int) X.getX(),
+				(int) X.getY());
 		g2.setColor(Color.GREEN);
-		g2.drawLine((int) oldY.getX(), (int) oldY.getY(), (int) Y.getX(), (int) Y.getY());
+		g2.drawLine((int) oldY.getX(), (int) oldY.getY(), (int) Y.getX(),
+				(int) Y.getY());
 		g2.setColor(Color.BLUE);
-		g2.drawLine((int) oldZ.getX(), (int) oldZ.getY(), (int) Z.getX(), (int) Z.getY());
+		g2.drawLine((int) oldZ.getX(), (int) oldZ.getY(), (int) Z.getX(),
+				(int) Z.getY());
 
 		g2.setColor(Color.BLACK);
 		g2.drawLine(0, getHeight() / 2, getWidth(), getHeight() / 2);
