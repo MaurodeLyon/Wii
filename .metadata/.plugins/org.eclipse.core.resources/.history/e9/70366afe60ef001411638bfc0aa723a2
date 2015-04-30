@@ -75,7 +75,7 @@ public class WiiMoteModel implements ActionListener {
 		// show sequence
 		case 4:
 			if(!showing){
-				view.backColor = Color.GRAY;
+				view.backColor = Color.GREY;
 				showsequence();
 				showing = true;
 			}
@@ -101,7 +101,6 @@ public class WiiMoteModel implements ActionListener {
 	private void flash(boolean b) {
 		if(b){
 			view.backColor = new Color(0,153,0);
-			
 		}else{
 			view.backColor = new Color(153,0,0);
 		}

@@ -54,7 +54,7 @@ public class WiiMoteController implements WiimoteListener {
 	}
 
 	public void onButtonsEvent(WiimoteButtonsEvent e) {
-		if (e.isButtonUpJustPressed()) {
+		if(model.state != 4){if (e.isButtonUpJustPressed()) {
 			model.up = true;
 		}
 		if (e.isButtonUpHeld() && e.isButtonAPressed()) {
@@ -154,7 +154,7 @@ public class WiiMoteController implements WiimoteListener {
 			WiiUseApiManager.getInstance().shutdown();
 			System.exit(0);
 		}
-		System.out.println(model.input);
+		System.out.println(model.input);}
 	}
 
 	@Override

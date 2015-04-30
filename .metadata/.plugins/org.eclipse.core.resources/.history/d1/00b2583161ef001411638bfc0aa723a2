@@ -105,6 +105,10 @@ public class WiiMoteModel implements ActionListener {
 		}else{
 			view.backColor = new Color(153,0,0);
 		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+		}
 	}
 
 	private void showsequence() {
