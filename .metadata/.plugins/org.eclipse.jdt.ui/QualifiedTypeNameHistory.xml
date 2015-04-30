@@ -11,9 +11,11 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.awt.geom.Point2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
-<fullyQualifiedTypeName name="nunchuck.WiiMoteController"/>
 <fullyQualifiedTypeName name="wiiusej.WiiUseApiManager"/>
 <fullyQualifiedTypeName name="wiiusej.Wiimote"/>
 <fullyQualifiedTypeName name="wiiusej.wiiusejevents.utils.WiimoteListener"/>
 <fullyQualifiedTypeName name="wiiusej.wiiusejevents.physicalevents.NunchukButtonsEvent"/>
+<fullyQualifiedTypeName name="nunchuck.WiiMoteController"/>
+<fullyQualifiedTypeName name="wiiusej.wiiusejevents.physicalevents.JoystickEvent"/>
+<fullyQualifiedTypeName name="wiiusej.utils.JoystickEventPanel"/>
 </qualifiedTypeNameHistroy>

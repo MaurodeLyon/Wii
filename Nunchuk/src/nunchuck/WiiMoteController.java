@@ -6,6 +6,7 @@ import wiiusej.wiiusejevents.physicalevents.ExpansionEvent;
 import wiiusej.wiiusejevents.physicalevents.IREvent;
 import wiiusej.wiiusejevents.physicalevents.MotionSensingEvent;
 import wiiusej.wiiusejevents.physicalevents.NunchukButtonsEvent;
+import wiiusej.wiiusejevents.physicalevents.NunchukEvent;
 import wiiusej.wiiusejevents.physicalevents.WiimoteButtonsEvent;
 import wiiusej.wiiusejevents.utils.WiimoteListener;
 import wiiusej.wiiusejevents.wiiuseapievents.ClassicControllerInsertedEvent;
@@ -22,6 +23,7 @@ public class WiiMoteController implements WiimoteListener {
 	private WiiMoteModel model;
 	private WiiMoteView view;
 	private Wiimote[] wiimotes;
+	private NunchukButtonsEvent nunchuckButtons;
 
 	public WiiMoteController(WiiMoteView view, WiiMoteModel model) {
 		this.model = model;
@@ -55,6 +57,11 @@ public class WiiMoteController implements WiimoteListener {
 	@Override
 	public void onButtonsEvent(WiimoteButtonsEvent e) {
 		// TODO Auto-generated method stub
+		if (nunchuckButtons != null) {
+			if (nunchuckButtons.isButtonCJustPressed()) {
+				System.out.println("c");
+			}
+		}
 	}
 
 	@Override
@@ -78,8 +85,11 @@ public class WiiMoteController implements WiimoteListener {
 	}
 
 	@Override
-	public void onExpansionEvent(ExpansionEvent e) {
+	public void onExpansionEvent(ExpansionEvent arg0) {
 		// TODO Auto-generated method stubs
+		if (arg0 instanceof NunchukEvent) {
+			nunchuckButtons = ((NunchukEvent) arg0).getButtonsEvent();
+		}
 	}
 
 	@Override
@@ -97,7 +107,6 @@ public class WiiMoteController implements WiimoteListener {
 	@Override
 	public void onIrEvent(IREvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -113,12 +122,10 @@ public class WiiMoteController implements WiimoteListener {
 	@Override
 	public void onNunchukRemovedEvent(NunchukRemovedEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println(arg0);
 	}
 
 	@Override
 	public void onStatusEvent(StatusEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 }
