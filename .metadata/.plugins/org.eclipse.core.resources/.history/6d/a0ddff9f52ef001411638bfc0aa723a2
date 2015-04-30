@@ -1,0 +1,25 @@
+package nunchuck;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.geom.Point2D;
+
+import javax.swing.Timer;
+
+public class WiiMoteModel implements ActionListener {
+
+	private WiiMoteView view;
+	public Point2D joyStick = new Point2D.Double(0,0);
+	public float angle;
+	public float magnitude;
+	
+	
+	public WiiMoteModel(WiiMoteView view) {
+		this.view = view;
+		new Timer(200, this).start();
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		System.out.println(Math.sin(Math.toRadians(model.angle)));
+	}
+}
