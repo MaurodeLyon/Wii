@@ -15,9 +15,10 @@
 <fullyQualifiedTypeName name="wiiusej.utils.JoystickEventPanel"/>
 <fullyQualifiedTypeName name="wiiusej.wiiusejevents.physicalevents.NunchukButtonsEvent"/>
 <fullyQualifiedTypeName name="wiiusej.wiiusejevents.physicalevents.NunchukEvent"/>
-<fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="wiiusej.wiiusejevents.physicalevents.JoystickEvent"/>
 <fullyQualifiedTypeName name="java.awt.geom.Point2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.awt.geom.AffineTransform"/>
 </qualifiedTypeNameHistroy>
