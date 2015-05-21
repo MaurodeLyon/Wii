@@ -1,6 +1,7 @@
 package simon;
 
 import java.awt.geom.Rectangle2D;
+import java.util.List;
 
 import wiiusej.WiiUseApiManager;
 import wiiusej.Wiimote;
