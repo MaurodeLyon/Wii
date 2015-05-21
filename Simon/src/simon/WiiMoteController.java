@@ -65,6 +65,7 @@ public class WiiMoteController implements WiimoteListener {
 			} catch (InterruptedException e1) {
 			}
 			wiimotes[0].deactivateRumble();
+			model.up = false;
 		}
 		if (e.isButtonUpJustReleased()) {
 			model.up = false;
@@ -82,6 +83,7 @@ public class WiiMoteController implements WiimoteListener {
 			} catch (InterruptedException e1) {
 			}
 			wiimotes[0].deactivateRumble();
+			model.down = false;
 		}
 		if (e.isButtonDownJustReleased()) {
 			model.down = false;
@@ -99,6 +101,7 @@ public class WiiMoteController implements WiimoteListener {
 			} catch (InterruptedException e1) {
 			}
 			wiimotes[0].deactivateRumble();
+			model.left = false;
 		}
 		if (e.isButtonLeftJustReleased()) {
 			model.left = false;
@@ -116,6 +119,7 @@ public class WiiMoteController implements WiimoteListener {
 			} catch (InterruptedException e1) {
 			}
 			wiimotes[0].deactivateRumble();
+			model.right = false;
 		}
 		if (e.isButtonRightJustReleased()) {
 			model.right = false;

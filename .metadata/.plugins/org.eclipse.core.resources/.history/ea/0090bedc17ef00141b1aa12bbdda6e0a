@@ -1,7 +1,0 @@
-package nunchuck;
-
-import wiiusej.utils.JoystickEventPanel;
-
-public class NunchukJoystick extends JoystickEventPanel{
-
-}
