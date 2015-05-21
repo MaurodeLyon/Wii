@@ -1,0 +1,33 @@
+package sensorBar;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+
+import javax.swing.Timer;
+
+import wiiusej.wiiusejevents.physicalevents.IREvent;
+import wiiusej.wiiusejevents.physicalevents.MotionSensingEvent;
+
+public class WiiMoteModel implements ActionListener {
+
+	private WiiMoteView view;
+	private IREvent IR;
+
+	public WiiMoteModel(WiiMoteView view) {
+		this.view = view;
+		new Timer(1, this).start();
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (IR != null) {
+			view.point = new Rectangle2D.Double(IR.getAx(), IR.getAy(), 50, 50);
+		}
+		view.repaint();
+	}
+
+	public void setView(IREvent e) {
+		IR = e;
+	}
+}

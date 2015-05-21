@@ -1,0 +1,30 @@
+package sensorBar;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JPanel;
+
+@SuppressWarnings("serial")
+public class WiiMoteView extends JPanel {
+
+	public List<Shape> points = new ArrayList<Shape>();
+
+	public WiiMoteView() {
+		setPreferredSize(new Dimension(1000, 1000));
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2 = (Graphics2D) g;
+		for(Shape rect : points){
+			g2.fill(point);
+			}
+		}
+	}
+}
